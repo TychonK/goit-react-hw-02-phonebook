@@ -1,11 +1,18 @@
-import { v4 as uuid } from 'uuid'
-const liKey = uuid();
-function ListItems({ arr }) {
-    const listMarkup = arr.map((arrItem) => {
+function ListItems({ arr, filter, deleteContact }) {
+    const listMarkup = arr.filter((val) => {
+        if (filter === "") {
+            return val
+        } else if (val.name.toLowerCase().includes(filter.toLowerCase())) {
+            return val
+        }
+    }).map((val, index) => {
         return (
-            <li key={liKey}>{arrItem.name}: { arrItem.number}</li>
+            <li key={index}>{val.name}: {val.number}
+                <button id={val.name} type="button" onClick={deleteContact}>Delete</button>
+            </li>
+            
         )
-    })
+    })     
     return (
         listMarkup
     )
