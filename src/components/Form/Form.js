@@ -65,7 +65,7 @@ export class Form extends Component {
             />
 
           </label>
-          <button type="submit">Add contact</button>
+          <button className="add-button" type="submit">Add contact</button>
         </form>
         )
     }

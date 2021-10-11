@@ -8,7 +8,7 @@ import { Filter } from './components/Filter/Filter'
 
 class App extends Component {
   state = {
-  contacts: [],
+    contacts: [{ name: "Hello", number:"+20303003"}],
   filter: ''
   }
 
